@@ -1,5 +1,4 @@
 {
-  "results_returned": 10,
   "events": [
     {
       "event_url": "https://dmm.connpass.com/event/125120/",
@@ -263,7 +262,5 @@
       "ended_at": "2019-05-23T21:00:00+09:00",
       "place": "Deportale Complex"
     }
-  ],
-  "results_start": 1,
-  "results_available": 1518
+  ]
 }
