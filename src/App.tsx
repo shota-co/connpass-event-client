@@ -7,22 +7,31 @@ import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/es/CardActions";
 import Button from "@material-ui/core/Button";
 import Truncate from "react-truncate";
+const axiosJsonpAdapter = require("axios-jsonp");
 
 const App = () => {
+  // eslint-disable-next-line
   const [events, setEvents] = React.useState<ConnpassEvent[]>([]);
 
   useMount(() => {
-    // axios.get('http://localhost:3001/events')
     axios.get('https://connpass.com/api/v1/event/?count=5',{
-      headers: {
-        // 'Content-Type': 'application/json;charset=utf-8',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin': '*',
-      },
+      adapter: axiosJsonpAdapter,
     })
-      .then((res) => {
-        setEvents(res.data);
+      .then((res)=> {
+        setEvents(res.data.events)
       })
+
+    // axios.get('https://connpass.com/api/v1/event/?count=5',{
+    //   headers: {
+    //     // 'Content-Type': 'application/json;charset=utf-8',
+    //     'Content-Type': 'application/x-www-form-urlencoded',
+    //     'Access-Control-Allow-Origin': '*',
+    //   },
+    // })
+    //   .then((res) => {
+    //     console.log(res);
+    //     setEvents(res.data);
+    //   })
   });
 
   const createDescriptionMarkUp = (value: any) => {
