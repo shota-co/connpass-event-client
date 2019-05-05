@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/connpass-event-client/precache-manifest.b33c85db5b2fa3818dd140935426ec48.js"
+  "/connpass-event-client/precache-manifest.87dc42ebe3d0dfdfbafd0668a2162c39.js"
 );
 
 self.addEventListener('message', (event) => {
